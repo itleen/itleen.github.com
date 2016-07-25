@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>leeN</title>
+<style type="text/css">
+    @keyframes test{
+        from{left:0px;}
+        to{left: -57px;}
+    }
+    #box{ width: 50px; height: 500px; border: 10px solid rgba(000,000,000,.4); margin: 100px auto;overflow: hidden; position: relative;}
+    #box div{ width: 500px; height: 500px; position: absolute; top: 0px; left: 0px; background: -webkit-repeating-linear-gradient(-45deg,red 0px, red 10px,#fff 10px, #fff 20px, blue 20px, blue 30px, #fff 30px ,#fff 40px); -webkit-animation:test 1s linear infinite;}
+</style>
+</head>
+<body>
+    <div id="box">
+        <div></div>
+    </div>
+</body>
+</html>
