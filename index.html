@@ -2,46 +2,758 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>leeN</title>
+<link rel="stylesheet" type="text/css" href="css/base.css">
+<title>it_leen | leen</title>
 <style type="text/css">
-    span{ margin-left: 50px;}
-    input{ margin-left: 30px; }
-    #box{ width: 500px; height: 30px; border-radius: 30px;background: blue; position: absolute;top: 100px;left: 300px; overflow: hidden;}
-    #box div{width: 500px; height: 240px;position: absolute;top: 0;left: 0;background: -webkit-repeating-linear-gradient(-45deg,#00d11d 0px,#00d11d 10px,#fde072 10px,#fde072 20px);}
+html{overflow-x:hidden;overflow-y: hidden; }
+/*******    home     *******/
+	header{width: 100%; height: 80px;position: fixed;z-index:5;background: rgba(0,0,0,.2);}
+	.info{width: 280px;height: 54px;margin: 25px 0 0 50px;border-top: 1px solid #000;}
+	.info i{width: 25px;height: 25px;margin-top: 10px;background: url(img/touxiang.jpg);background-size: 100%;border-radius: 50%;border:1px solid #000;overflow: hidden;}
+	.info a{line-height: 54px;font-family: 'aa';font-size: 25px;font-weight: bold;color: #000;margin-left: .7em;}
+	.info a em{font-size: 12px;color: #e1cc75;font-weight: normal;margin-left: 1em;line-height: 60px;font-style: normal;}
+	header .back{ margin-right: 25px;margin-top: 25px; width: 100px;height: 35px;border:1px solid #000;border-radius: 5px;font-size: 20px;text-align: center;line-height: 35px;color: #000;}
+	header .back:hover{background: #e1cc75;color: #fff;}
+	.menu{width: 400px;height: 50px;margin: 15px 50px 0 0;}
+	.menu li{ width: 50px;padding: 0 25px;height: 50px;text-align: center;cursor: pointer;}
+	.menu li i{font-size: 25px;display: block;color: #efa309;}
+	.menu li i:hover{color: red;}
+	.menu .last{margin-top: 2px;}
+	.menu li em{display: block; margin-top: -2px;font-style: normal;font-size: 30px;font-family:'bb';color:purple;}
+/*******   main     *********/
+	.main{width: 100%;height:100%;background: url(img/bird.jpg);background-size: 100%;position: absolute;top:0;left: 0;z-index: 3;}
+	.main .pro{width: 100%;height: 100%;position: absolute;top: 0;left: 0;background: rgba(0,0,0,.4);z-index: 1;}
+	.main .text{width: 400px;height: 200px;position: absolute;top: 50%;left: 30%;z-index: 3;}
+	.text h2{font-family: 'aa';line-height: 60px;text-align: center;font-size: 60px;color: #fff;}
+	.text p{ font-size: 15px;line-height: 30px;color:#ccc;}
+	/*****  scroll   *****/
+	.scroll{width: 60px; height: 180px;position: fixed;bottom: 80px;right: 50px;z-index: 5;}
+	.scroll p{font-size: 12px;text-align: center;line-height: 20px;color: #fff;}
+	.scroll a{display: block; text-align: center;font-size: 12px; color: aqua;margin-bottom: 10px; cursor: pointer;
+		-webkit-transition: 0.5s all ease;
+		-moz-transition: 0.5s all ease;
+		-ms-transition:0.5s all ease;
+
+	}
+	.scroll .down{font-size: 20px;margin-top: 20px;margin-bottom: 10px;}
+	.scroll .on{}
+	.scroll a:hover{color: red;
+		-webkit-transform: scale(2,2);
+		-moz-transform: scale(2,2);
+		-ms-transform:scale(2,2);
+	}
+/******  skills   *******/
+	.skill{position: absolute;top: 100%;left: 0;width:100%;height: 100%;background:rgba(0,0,0,.2);z-index: 3;}
+	.skill .my_skill{width: 500px; height: 160px;text-align: center;line-height: 160px;margin: 30px auto;font-size: 50px; color: green;border-bottom: 3px solid aqua;position: relative;}
+	.my_skill i{width: 150px;height: 5px;background: green;position: absolute;left: 30%;bottom: -4px;}
+	.skill_info{ width: 600px;margin-left: 20px; }
+	.skill_info img{ width: 100%;display: block;}
+	.skill_info p{width: 600px;height: 120px;font-size: 20px;line-height: 30px; word-break:break-all;text-align: center;}
+	.skill_main .skill_banner{width: 400px; height: 400px;}
+	.skill_banner li{width: 100%;height:calc(20% - 10px);margin-bottom: 10px;}
+	.skill_banner li a{display:block;font-size: 15px; line-height: 15px;color: green;}
+	.skill_banner li em{display: block;width: 300px;height: 20px;margin-top: 10px;border:2px solid #000;border-radius: 10%;position: relative;}
+	.skill_banner li em i{position: absolute;width: 75%;height: 100%;background: green;top: 0;left: 0;}
+	.skill_banner li em .cs3{width: 55%;}
+	.skill_banner li em .js{width: 76%;}
+	.skill_banner li em .pho{width: 70%;}
+	.skill_banner li em .ill{width: 40%;}
+/*******   diray    *******/
+	.diray{width: 100%;height: 100%;position: absolute;top: 200%;left: 0;background: url(img/west.jpg);background-size: 100%;overflow: hidden; }
+	.diray .cs_list{width:680px; height:400px; margin:150px auto 0px;position: relative;cursor: pointer;}
+	.diray .cs_list>a{position: absolute;z-index:4;width: 60px;height:30px;font-size: 12px;line-height: 30px;text-align: center;border-radius: 5px;background:-webkit-linear-gradient(indianred,rgb(239,163,9));font-weight: bold; -webkit-transition:0.1s all ease;box-shadow: 0px 5px 5px #ccc,inset 0 0 5px #000;color: #000;}
+	.diray .cs_list .prevPag{bottom: -100px;left: 80px;}
+	.diray .cs_list .nextPag{bottom: -100px;right: 80px;}
+	.diray .cs_list>a:hover{box-shadow: 0px 5px 5px #fff,inset 0 0 25px #000;}
+    .diray .cs_list>a:active{bottom: -105px;box-shadow: 0px 0px 0px #fff,inset 0 0 5px #000;}
+	.diray .cs_list>div{ position:absolute; left:0; top:0; width:100%; height:100%; background:#ccc;box-shadow: 0 0 20px #fff;border-radius: 20px; opacity:0;-webkit-transform:perspective(800px) translate(0,0) rotateY(0deg); -webkit-transition:2s all ease;}
+
+	/*****P1  cat *****/
+	.diray .cs_list>div:nth-child(1){background: #ccc;}
+	.diray .cs_list .cat{width:50px; height:100px; position:absolute; top:50%; left:50%; margin-left:-25px; margin-top:-50px; -webkit-transform-style:preserve-3d; -webkit-transform:perspective(800px) rotateY(0deg) rotateX(0deg); -webkit-transition:5s all ease;}
+	.diray .cs_list .cat li{position:absolute; top:0; left:0; width:100%; height:100%; overflow:hidden; border-radius:10px; box-shadow:0 0 10px #fff; -webkit-transform: rotateY(0deg) translateZ(0px);}
+	.diray .cs_list .cat li img{width: 50px;height: 100px;}
+	.diray .cs_list .cat:active{-webkit-transform:perspective(800px) rotateY(360deg) rotateX(60deg);}
+	/***** P 2 book *****/
+	.diray .cs_list>div:nth-child(2){overflow: hidden;}
+	.diray .book{ width: 100%; height: 100%; background: url(img/1.jpg) no-repeat; position: relative;border-radius: 20px;}
+	.diray .book .page1{ position: absolute; right: 0; top: 0; width: 50%; height: 100%; -webkit-transform-style: preserve-3d; -webkit-transform: perspective(800px) rotateY(0deg); -webkit-transform-origin: left; z-index: 2;}
+	.diray .book .page1 div{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+	.diray .book .page1 .front{ background: url(img/1.jpg) no-repeat right center; -webkit-transform: translateZ(1px);}
+	.diray .book .page1 .back{ background: url(img/2.jpg) no-repeat; -webkit-transform: translateZ(-1px) scale(-1,1);}
+	.diray .book .page2{ background: url(img/2.jpg) no-repeat right; position: absolute; right: 0; top: 0; width: 50%; height: 100%; z-index: 1;}
+
+	/***** P 3 boom *****/
+
+	.diray .cs_list>div:nth-child(3){overflow:hidden;}
+	.diray .cs_list .boom{ width: 100%; height: 100%; background:url(img/2.jpg) no-repeat; position:relative;}
+	.diray .cs_list .boom span{ position:absolute; top:0; left:0; background:url(img/1.jpg) no-repeat;}
+
+	/***** P4  block *****/
+	.diray .cs_list .clock{ width:300px; height:300px; position:absolute; left:50%; top:50%; margin-left:-150px; margin-top:-150px; border:5px solid #000; border-radius:50%; }
+	.diray .cs_list .clock .hou{ width:10px; height:80px; background:#000; border-radius:50% 50% 0 0; position:absolute; left:50%; margin-left:-5px; top:70px; -webkit-transform-origin:bottom;}
+	.diray .cs_list .clock .min{ width:8px; height:100px; background:#000; border-radius:50% 50% 0 0; position:absolute; left:50%; margin-left:-4px; top:50px; -webkit-transform-origin:bottom;}
+	.diray .cs_list .clock .sec{width:6px; height:120px; background:red; border-radius:50% 50% 0 0; position:absolute; left:50%; margin-left:-3px; top:30px; -webkit-transform-origin:bottom;}
+	.diray .cs_list .clock span{ width:4px; height:8px; background:#000; position:absolute; left:50%; margin-left:-2px; top:0; -webkit-transform-origin:center 150px; }
+	.diray .cs_list span.big_scale{height:15px; width:6px; margin-left:-3px;}
+	.diray .cs_list .big_scale em{ position:absolute; top:15px; left:50%; margin-left:-15px; font-style:normal; width:30px;  text-align:center; font-weight:bold;}
+	.diray .cs_list .cap{ position:absolute; width:20px; height:20px; left:50%; top:50%; margin-left:-10px; margin-top:-10px; background:-webkit-radial-gradient(#fff,#000); border-radius:50%;}
+
+	/***** P5 roll_box *****/
+	.diray .cs_list>div:nth-child(5){overflow:hidden;}
+	#roll_map{width: 100%;height: 100%;}
+	#roll_box{width:40px; height:40px; background:-webkit-radial-gradient(rgb(232,191,101),#000);  border-radius: 50%; position:absolute; top:0; left:0;}
+	/***** P6 cross *****/
+	.diray .cs_list>div:nth-child(6){overflow:hidden;}
+	.diray .cs_list #ul1{width:400px;height: 400px;margin: 0 auto;}
+	.diray .cs_list #ul1 li{width:80px;height:80px;  float:left;margin:10px;background:#000; font-size:40px; overflow:hidden; position:relative;}
+	.diray .cs_list  #ul1 li span{width:100%;height:100%; background:red; opacity:.3; position:absolute;left:-150px; top:0;}
+	/********* P7 canvas  ***********/
+	.diray .cs_list>div:nth-child(7){overflow:hidden;}
+	#pinkP{width: 100%;height: 100%;}
+	#cavs1{background: #000;border-radius: 20px;}
+
+
+
+
+	.diray .cs_list .l2{opacity:0; -webkit-transform:perspective(800px) translate(-200px,0) rotateY(30deg); z-index:1;}
+	.diray .cs_list .l1{opacity:0.8; -webkit-transform:perspective(800px) translate(-150px,0) rotateY(30deg); z-index:3;}
+	.diray .cs_list .cur{ opacity:1;-webkit-transform:perspective(800px) translateZ(100px); z-index:5;}
+	.diray .cs_list .r1{opacity:0.8; -webkit-transform:perspective(800px) translate(150px,0) rotateY(-30deg); z-index:3;}
+	.diray .cs_list .r2{opacity:0; -webkit-transform:perspective(800px) translate(200px,0) rotateY(-30deg); z-index:1;}
 </style>
+<script type="text/javascript" src="js/smooth.js"></script>
+<script src="js/move.js"></script>
 <script type="text/javascript">
-    window.onload = function(){
-        var aColor = document.getElementsByTagName('input');
-        var aSpan = document.getElementsByTagName('span');
-        var oDiv = document.querySelector('#box div');
-        var c1 = '#00d11d',c2 = '#fde072',t = 0;
-        for(var i = 0;i<aColor.length;i++){ 
-            (function(index){
-                aColor[i].onchange = function(){
-                    aSpan[index].innerHTML = aColor[index].value;
-                    aSpan[index].style.color = aColor[index].value;
-                    index == 0?c1 = aColor[index].value:c2 = aColor[index].value; 
-                    oDiv.style.background = '-webkit-repeating-linear-gradient(-45deg,'+c1+' 0px,'+c1+' 10px,'+c2+' 10px,'+c2+' 20px)';
-                };
-            })(i);
-        }
-        setInterval(function(){
-            t -= 2;
-            oDiv.style.top = t%210 + 'px';
-        },30);
-    }
+window.onload = function(){
+//diray
+	//list
+		(function(){
+			function tab(){
+				for(var i = 2;i<aLi.length;i++){
+					aLi[i].className = classN[i-2];
+				}
+				var oCur = document.querySelector('#diray .cur');
+				function tranEnd(){
+					oCur.removeEventListener('transitionend',tranEnd,false);
+					bOk = false;
+				}
+				oCur.addEventListener('transitionend',tranEnd,false);
+			}
+			function fnNext(){
+				if(bOk)return;
+				classN.unshift(classN.pop());
+				bOk = true;
+				tab();
+			}
+
+			var oUl = document.querySelector('#diray .cs_list');
+			var oPrevP = document.querySelector('#diray .prevPag');
+			var oNextP = document.querySelector('#diray .nextPag');
+			var aLi = oUl.children;
+			var classN = [];
+			var bOk = false;
+			for(var i = 2;i<aLi.length;i++){
+				classN.push(aLi[i].className);
+			}
+			oPrevP.onclick = function(){
+				if(bOk)return;
+				classN.push(classN.shift());
+				bOk = true;
+				tab();
+			};
+			oNextP.onclick = function(){
+				if(bOk)return;
+				classN.unshift(classN.pop());
+				bOk = true;
+				tab();
+			};
+			clearInterval(oUl.timer);
+			oUl.timer = setInterval(fnNext,1000);
+			oUl.addEventListener('mouseenter',function(){
+				 clearInterval(oUl.timer);
+			});
+			oUl.addEventListener('mouseleave',function(){
+				oUl.timer = setInterval(fnNext,1000);
+			});
+		})();
+	//p1 cat
+		(function(){
+			var aLie = document.querySelectorAll('.diray .cs_list .cat li');
+			var oCat = document.querySelector('.diray .cs_list .cat');
+			var len = aLie.length;
+			function fang(){
+				for(var i=0;i<len;i++){
+					aLie[i].style.WebkitTransition = '1s all ease '+((len-i)*100)+'ms';
+					aLie[i].style.WebkitTransform = 'rotateY('+360/len*i+'deg) translateZ(150px)';
+				}
+			}
+			oCat.addEventListener('click',fang);
+		})();
+	//p2  book
+		(function(){
+			var oBox = document.querySelector('.diray .book');
+			var oPage = document.querySelector('.diray .book .page1');
+			var oPage2 = document.querySelector('.diray .book .page2');
+			var oFront = document.querySelector('.diray .book .front');
+			var oBack = document.querySelector('.diray .book .back');
+			var iNow = 0;
+			var bOk = false;
+
+			oBox.addEventListener('click',function(){
+				if (bOk)return;
+				bOk = true;
+				iNow++;
+				oPage.style.WebkitTransition = '1s all ease';
+				oPage.style.WebkitTransform = 'perspective(800px) rotateY(-180deg)';
+
+				function tranEnd(){
+					oPage.removeEventListener('transitionend',tranEnd,false);
+					oPage.style.WebkitTransition = 'none';
+					oBox.style.backgroundImage = 'url(img/'+(iNow%3+1)+'.jpg)';
+					oFront.style.backgroundImage = 'url(img/'+(iNow%3+1)+'.jpg)';
+					oBack.style.backgroundImage = 'url(img/'+((iNow+1)%3+1)+'.jpg)';
+					oPage2.style.backgroundImage = 'url(img/'+((iNow+1)%3+1)+'.jpg)';
+					oPage.style.WebkitTransform = 'perspective(800px) rotateY(0deg)';
+					bOk = false;
+				}
+				oPage.addEventListener('transitionend',tranEnd,false);
+			});
+		})();
+	//p3  boom
+		(function(){
+			var oBox = document.querySelector('.diray .cs_list .boom');
+			var iNow = 0;
+			var R = 4;
+			var C = 7;
+			var bOk = false;
+			for(var i=0;i<R;i++){
+				for(var j=0;j<C;j++){
+					var oS = document.createElement('span');
+					oS.style.width = oBox.offsetWidth/C+'px';
+					oS.style.height = oBox.offsetHeight/R+'px';
+					oBox.appendChild(oS);
+					oS.style.left = j*oS.offsetWidth+'px';
+					oS.style.top = i*oS.offsetHeight+'px';
+					oS.style.backgroundPosition = '-'+oS.offsetLeft+'px -'+oS.offsetTop+'px';
+				}
+			}
+			var aS = oBox.children;
+			oBox.onclick=function(){
+				if(bOk)return;
+				bOk = true;
+				iNow++;
+				for(var i=0;i<aS.length;i++){
+					aS[i].style.WebkitTransition = '.7s all ease';
+					var x = aS[i].offsetLeft+aS[i].offsetWidth/2-oBox.offsetWidth/2;
+					var y = aS[i].offsetTop+aS[i].offsetHeight/2-oBox.offsetHeight/2;
+					aS[i].style.WebkitTransform = 'perspective(800px) translate('+x+'px,'+y+'px) rotateY('+rnd(-360,360)+'deg) rotateX('+rnd(-360,360)+'deg) scale('+rnd(1,3)+','+rnd(1,3)+')';
+					aS[i].style.opacity = 0;
+				}
+
+				function tranEnd(){
+					aS[aS.length-1].removeEventListener('transitionend',tranEnd,false);
+					for(var i=0;i<aS.length;i++){
+						aS[i].style.WebkitTransition = 'none';
+						aS[i].style.backgroundImage = 'url(img/'+(iNow%3+1)+'.jpg)';
+						aS[i].style.WebkitTransform = 'perspective(800px) translate(0,0) rotateY(0deg) rotateX(0deg) scale(1,1)';
+						aS[i].style.opacity = 1;
+					}
+					oBox.style.backgroundImage = 'url(img/'+((iNow+1)%3+1)+'.jpg)';
+					bOk = false;
+				}
+				aS[aS.length-1].addEventListener('transitionend',tranEnd,false);
+			};
+			function rnd(n,m){
+				return Math.floor(Math.random()*(m-n)+n);
+			}
+		})();
+	//p4 clock
+		(function(){
+			var oClock = document.querySelector('.diray .cs_list .clock');
+			var oHou = document.querySelector('.diray .cs_list .hou');
+			var oMin = document.querySelector('.diray .cs_list .min');
+			var oSec = document.querySelector('.diray .cs_list .sec');
+
+			var N = 60;
+			for(var i=0;i<N;i++){
+				var oS = document.createElement('span');
+				oS.style.WebkitTransform = 'rotate('+i*6+'deg)';
+				if(i%5==0){
+					oS.className = 'big_scale';
+					oS.innerHTML = '<em>'+(i/5||12)+'<\/em>'
+					var oEm = oS.children[0];
+					oEm.style.WebkitTransform = 'rotate('+-i*6+'deg)';
+				}
+				oClock.appendChild(oS);
+			}
+
+			function tick(){
+				var oDate = new Date();
+				var h = oDate.getHours();
+				var m = oDate.getMinutes();
+				var s = oDate.getSeconds();
+				var ms = oDate.getMilliseconds();
+
+				oHou.style.WebkitTransform = 'rotate('+(h*30+m/60*30)+'deg)';
+				oMin.style.WebkitTransform = 'rotate('+(m*6+s/60*6)+'deg)';
+				oSec.style.WebkitTransform = 'rotate('+(s*6+ms/1000*6)+'deg)';
+			}
+			tick();
+			setInterval(tick,1);
+		})();
+	//p5 roll_box
+		(function(){
+			var oBox = document.getElementById('roll_box');
+			var oMap = document.getElementById('roll_map');
+			var iSpeedX = 0;
+			var iSpeedY = 0;
+			var lastX = 0;
+			var lastY = 0;
+			oBox.onmousedown=function(ev){
+				clearInterval(oBox.timer);
+				var oEvent = ev||event;
+				var disX = oEvent.clientX-oBox.offsetLeft;
+				var disY = oEvent.clientY-oBox.offsetTop;
+				document.onmousemove=function(ev){
+					var oEvent = ev||event;
+					oBox.style.left = oEvent.clientX-disX+'px';
+					oBox.style.top = oEvent.clientY-disY+'px';
+
+					iSpeedX = oEvent.clientX-lastX;
+					iSpeedY = oEvent.clientY-lastY;
+
+					lastX = oEvent.clientX;
+					lastY = oEvent.clientY;
+				};
+				document.onmouseup=function(){
+					document.onmousemove = null;
+					document.onmouseup=null;
+
+					//alert(iSpeedX+','+iSpeedY);
+
+					move(oBox);
+
+					oBox.releaseCapture&&oBox.releaseCapture();
+				};
+				oBox.setCapture&&oBox.setCapture();
+				return false;
+			};
+
+
+			function move(obj){
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					iSpeedY+=3;
+
+					var l = obj.offsetLeft+iSpeedX;
+					var t = obj.offsetTop+iSpeedY;
+
+					if(t>=(oMap.offsetHeight-obj.offsetHeight)){
+						t = oMap.offsetHeight-obj.offsetHeight;
+						iSpeedY*=-0.85;
+						iSpeedX*=0.85;
+					}
+
+					if(t<=0){
+						t = 0;
+						iSpeedY*=-0.85;
+						iSpeedX*=0.85;
+					}
+
+					if(l>(oMap.offsetWidth-obj.offsetWidth)){
+						l = oMap.offsetWidth-obj.offsetWidth;
+						iSpeedX*=-0.85;
+						iSpeedY*=0.85;
+					}
+
+					if(l<=0){
+						l = 0;
+						iSpeedX*=-0.85;
+						iSpeedY*=0.85;
+					}
+
+					obj.style.left = l+'px';
+					obj.style.top = t+'px';
+
+
+					if(Math.abs(iSpeedX)<1)iSpeedX=0;
+					if(Math.abs(iSpeedY)<1)iSpeedY=0;
+
+					if(iSpeedX==0&&iSpeedY==0&&obj.offsetTop>=(oMap.offsetHeight-obj.offsetHeight)){
+						clearInterval(obj.timer);
+					}
+				},30);
+			}
+		})();
+	//p6
+		(function(){
+			function getPos(obj){
+				var l = 0,t = 0;
+				while(obj){
+					l+=obj.offsetLeft;
+					t+=obj.offsetTop;
+					obj = obj.offsetParent;
+				}
+				return {'left':l,'top':t};
+			}
+			function through(obj){
+				function a2d(n){
+					return 	n*180/Math.PI;
+				}
+				//判断鼠标从哪个边移入
+				function hoverDir(obj,ev){
+					var x = getPos(obj).left+obj.offsetWidth/2 - ev.pageX;
+					var y = getPos(obj).top+obj.offsetHeight/2 - ev.pageY;
+					return Math.round((a2d(Math.atan2(y,x))+180)/90)%4;
+				}
+				obj.onmouseover = function(ev){
+					var oEvent = ev||event;
+					var oFrom = oEvent.fromElement||oEvent.relatedTarget;
+					if(obj.contains(oFrom)){
+						return;
+					}
+					var dir = hoverDir(obj,oEvent);
+					var oS = obj.children[0];
+					//左边 2 右侧0 上边3  下边1
+					switch(dir){
+						case 0:
+							oS.style.left = '150px';
+							oS.style.top = 0;
+						break;
+						case 1:
+							oS.style.top = '80px';
+							oS.style.left = 0;
+						break;
+						case 2:
+							oS.style.left = '-150px';
+							oS.style.top = 0;
+						break;
+						case 3:
+							oS.style.top = '-80px';
+							oS.style.left = 0;
+						break;
+					}
+					move(oS,{left:0,top:0});
+				};
+
+				obj.onmouseout = function(ev){
+					var oEvent = ev||event;
+					var oTo = oEvent.toElement||oEvent.relatedTarget;
+					if(obj.contains(oTo)){
+						return;
+					}
+					var dir = hoverDir(obj,oEvent);
+					var oS = obj.children[0];
+					//左边 2 右侧0 上边3  下边1
+					switch(dir){
+						case 0:
+							move(oS,{left:150,top:0});
+						break;
+						case 1:
+							move(oS,{left:0,top:80});
+						break;
+						case 2:
+							move(oS,{left:-150,top:0});
+						break;
+						case 3:
+							move(oS,{left:0,top:-80});
+						break;
+					}
+				};
+			}
+			var oUl = document.getElementById('ul1');
+			var aLi = oUl.children;
+			for(var i = 0;i<aLi.length;i++){
+				through(aLi[i]);
+			}
+		})();
+	// P7
+		(function(){
+			function rnd(n,m){
+				return Math.floor(Math.random()*(m-n)+n);
+			}
+			var oC = document.getElementById('cavs1');
+			oC.width = oC.parentNode.offsetWidth;
+			oC.height = oC.parentNode.offsetHeight;
+			var gd = oC.getContext('2d');
+			var N = 5;
+			var aPoint = [];
+			var LEN = 20;
+			var oldPoint = [];
+			for(var i=0;i<N;i++){
+				aPoint.push({
+					x:rnd(0,oC.width),
+					y:rnd(0,oC.height),
+					iSpeedX:rnd(-10,10),
+					iSpeedY:rnd(-10,10)
+				});
+			}
+			var r = rnd(0,256),
+				g = rnd(0,256),
+				b = rnd(0,256)
+				rS = rnd(-10,10),
+				gS = rnd(-10,10),
+				bS = rnd(-10,10);
+			//画图、运动
+			setInterval(function(){
+				//清除
+				gd.clearRect(0,0,oC.width,oC.height);
+
+				//运动
+				for(var i=0;i<N;i++){
+					aPoint[i].x+=aPoint[i].iSpeedX;
+					aPoint[i].y+=aPoint[i].iSpeedY;
+
+					if(aPoint[i].x<0){
+						aPoint[i].x=0;
+						aPoint[i].iSpeedX*=-1;
+					}
+
+					if(aPoint[i].x>oC.width){
+						aPoint[i].x=oC.width;
+						aPoint[i].iSpeedX*=-1;
+					}
+
+
+					if(aPoint[i].y<0){
+						aPoint[i].y=0;
+						aPoint[i].iSpeedY*=-1;
+					}
+
+					if(aPoint[i].y>oC.height){
+						aPoint[i].y=oC.height;
+						aPoint[i].iSpeedY*=-1;
+					}
+				}
+				//画点
+				for(var i=0;i<N;i++){
+					drawPoint(aPoint[i]);
+				}
+
+				//连线
+
+				gd.moveTo(aPoint[0].x,aPoint[0].y);
+				for(var i=1;i<N;i++){
+					gd.lineTo(aPoint[i].x,aPoint[i].y);
+				}
+				gd.closePath();
+				gd.strokeStyle = '#fff';
+				gd.stroke();
+
+
+				var arr = [];
+				for(var i=0;i<N;i++){
+					arr.push({
+						x:aPoint[i].x,
+						y:aPoint[i].y,
+						iSpeedX:aPoint[i].iSpeedX,
+						iSpeedY:aPoint[i].iSpeedY
+					});
+				}
+
+				oldPoint.push(arr);
+
+				if(oldPoint.length>LEN)oldPoint.shift();
+
+				if(r>=255||r<=0){
+					rS*=-1;
+				}else if(g>=255||g<=0){
+					gS*=-1;
+				}else if(b>=255||b<=0){
+					bS*=-1;
+				}
+
+				r+=rS;
+				g+=gS;
+				b+=bS;
+				for(var i=0;i<oldPoint.length;i++){
+					gd.beginPath();
+					gd.moveTo(oldPoint[i][0].x,oldPoint[i][0].y);
+					for(var j=1;j<oldPoint[i].length;j++){
+						gd.lineTo(oldPoint[i][j].x,oldPoint[i][j].y);
+					}
+					gd.closePath();
+
+					gd.strokeStyle = 'rgba('+r+','+g+','+b+','+i/LEN+')';
+					gd.stroke();
+				}
+			},16);
+			function drawPoint(oPoint){
+				gd.beginPath();
+				gd.fillStyle = '#fff';
+				gd.fillRect(oPoint.x,oPoint.y,1,1);
+			}
+		})();
+};
 </script>
 </head>
 <body>
-    颜色：
-    <input type="color" value="#00d11d">
-    <input type="color" value="#fde072">
-    <div>
-        <span>#00d11d</span>
-        <span>#fde072</span>
-    </div>
-    <div id="box">
-        <div></div>
-    </div>
+<header class="clear">
+	<section class="info fl clear">
+		<i class="fl"></i>
+		<a href="#" class="fl">it_leen<em>Designer.</em></a>
+	</section>
+	<a href="it_leen.html"  title="返回主页"  class="back iconfont fr">&#xe619</a>
+	<ul class="menu fr clear">
+		<li class="fl">
+			<a href="#home" id="a1"><i class="iconfont">&#xe688</i>
+			<em>home</em></a>
+		</li>
+		<li class="fl">
+			<a href="#skill" id="a2"><i class="iconfont">&#xe611</i>
+			<em>skills</em></a>
+		</li>
+		<li class="fl">
+			<a href="#diray"><i class="iconfont">&#xe634</i>
+			<em>diray</em></a>
+		</li>
+		<li class="fl">
+			<a href="#about"><i class="iconfont last">&#xe637</i>
+			<em>about</em></a>
+		</li>
+	</ul>
+</header>
+<!--home-->
+<section class="main" id="home">
+	<i class="pro"></i>
+	<div class="text">
+		<h2>Make it .</h2>
+		<p>My name is leeN . A front-end development engineer with committed to building a more friendly and interactive website ;</p>
+	</div>
+</section>
+<div class="scroll">
+	<div>
+		<a href="javascript:;" class="iconfont down">&#xe605</a>
+		<a href="#home" class="iconfont" title="Home">&#xe64c</a>
+		<a href="#skill" class="iconfont" title="Skill">&#xe64c</a>
+		<a href="#diray" class="iconfont" title="Diray">&#xe64c</a>
+		<a href="#about" class="iconfont" title="About">&#xe64c</a>
+	</div>
+</div>
+<!--skill-->
+<section class="skill" id="skill">
+	<div class="my_skill">My Skills<i></i></div>
+	<div class="skill_main clear">
+		<div class="skill_info fl">
+			<img src="img/js.png" />
+			<p>dsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksahdsjakfhfdsjkhfjdksahfjkdsaljdksah</p>
+		</div>
+		<ul class="skill_banner fr">
+			<li>
+				<a href="#">html5</a>
+				<em><i></i></em>
+			</li>
+			<li>
+				<a href="#">css3</a>
+				<em><i class="cs3"></i></em>
+			</li>
+			<li>
+				<a href="#">Javascript</a>
+				<em><i class="js"></i></em>
+			</li>
+			<li>
+				<a href="#">Photoshop</a>
+				<em><i class="pho"></i></em>
+			</li>
+			<li>
+				<a href="#">Illustator</a>
+				<em><i class="ill"></i></em>
+			</li>
+		</ul>
+	</div>
+</section>
+<!--diray-->
+<section class="diray" id="diray">
+	<div class="cs_list">
+		<a class="prevPag" href="javascript:;">上一篇</a>
+		<a class="nextPag" href="javascript:;">下一篇</a>
+		<div class="cur">
+			<ul class="cat">
+				<li><img src="img2/1.jpg" /></li>
+				<li><img src="img2/2.jpg" /></li>
+				<li><img src="img2/3.jpg" /></li>
+				<li><img src="img2/4.jpg" /></li>
+				<li><img src="img2/5.jpg" /></li>
+				<li><img src="img2/6.jpg" /></li>
+				<li><img src="img2/7.jpg" /></li>
+				<li><img src="img2/8.jpg" /></li>
+				<li><img src="img2/9.jpg" /></li>
+				<li><img src="img2/10.jpg" /></li>
+				<li><img src="img2/11.jpg" /></li>
+			</ul>
+		</div>
+		<div class="r1">
+			<div class="book">
+				<div class="page1">
+					<div class="front"></div>
+					<div class="back"></div>
+				</div>
+				<div class="page2"></div>
+			</div>
+		</div>
+		<div class="r2">
+			<div class="boom"></div>
+		</div>
+		<div>
+			<div class="clock">
+				<div class="hou"></div>
+				<div class="min"></div>
+				<div class="sec"></div>
+				<div class="cap"></div>
+			</div>
+		</div>
+		<div>
+			<div id="roll_map">
+				<div id="roll_box"></div>
+			</div>
+		</div>
+		<div class="l2">
+			<ul id="ul1">
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+				<li><span></span></li>
+			</ul>
+		</div>
+		<div class="l1">
+			<div id="pinkP">
+				<canvas id="cavs1"></canvas>
+			</div>
+		</div>
+	</div>
+</section>
+<!--about-->
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
